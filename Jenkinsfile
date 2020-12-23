@@ -15,4 +15,43 @@ steps
     }
     
 }
+  
+  stage ('NPM Install')
+  {  
+  steps
+      {
+           sh "cd /home/ubuntu/workspace/jenkinsangularjob/Myangular-Project1 ; sudo npm install"
+      }
+  }
+  
+  stage ('NG Build')
+  {
+  steps
+      {
+           sh "cd /home/ubuntu/workspace/jenkinsangularjob/Myangular-Project1 ; ng build"
+      }
+  }
+  stage ('copying dist folder to nginx')
+  {  
+  steps
+      { 
+        
+            sh "cd /home/ubuntu/workspace/jenkinsangularjob/Myangular-Project1 ; scp -r dist/  root@testserver:/var/www/ "
+      }
+        
+  }
+  stage ('nginx')
+  {
+  steps
+      {
+         node('Nginx') {
+      sh "cd /home/ubuntu/workspace/jenkinsangularjob/dist ; sudo apt-get install nginx -y"
+      sh "cd /home/ubuntu/workspace/jenkinsangularjob/dist ; systemctl start nginx"
+          }     
+      }  
+  }
+  
+  
+  
+  
 }
