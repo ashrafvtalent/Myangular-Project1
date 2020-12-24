@@ -36,7 +36,7 @@ steps
   steps
       { 
         
-            sh "cd /home/ubuntu/workspace/jenkinsangularjob/Myangular-Project1 ; scp -r dist/  root@testserver:/var/www/ "
+            sh "cd /home/ubuntu/workspace/jenkinsangularjob/Myangular-Project1 ; scp -r dist/  root@172.31.35.56:/var/www/ "
       }
         
   }
