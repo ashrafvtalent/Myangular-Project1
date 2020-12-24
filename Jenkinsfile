@@ -20,7 +20,7 @@ steps
   {  
   steps
       {
-           sh "cd /home/ubuntu/workspace/jenkinsangularjob/Myangular-Project1 ; sudo npm install"
+           sh "cd /home/ubuntu/workspace/jenkinsangularjob ; sudo npm install"
       }
   }
   
@@ -28,7 +28,7 @@ steps
   {
   steps
       {
-           sh "cd /home/ubuntu/workspace/jenkinsangularjob/Myangular-Project1 ; ng build"
+           sh "cd /home/ubuntu/workspace/jenkinsangularjob ; ng build"
       }
   }
   stage ('copying dist folder to nginx')
@@ -36,7 +36,7 @@ steps
   steps
       { 
         
-            sh "cd /home/ubuntu/workspace/jenkinsangularjob/Myangular-Project1 ; scp -r dist/  root@172.31.35.56:/var/www/ "
+            sh "cd /home/ubuntu/workspace/jenkinsangularjob ; scp -r dist/  root@172.31.35.56:/var/www/ "
       }
         
   }
