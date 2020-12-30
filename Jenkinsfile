@@ -20,7 +20,7 @@ steps
   {  
   steps
       {
-           sh "cd /home/ubuntu/workspace/jenkinsangularjob ;  npm install"
+           sh "cd /home/ubuntu/workspace/jenkinsangularjob ; sudo npm install"
       }
   }
   
