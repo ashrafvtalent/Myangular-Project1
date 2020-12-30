@@ -36,7 +36,7 @@ steps
   steps
       { 
         
-            sh "cd /home/ubuntu/workspace/jenkinsangularjob ; scp -r dist/  root@ipaddress:/var/www/ "
+            sh "cd /home/ubuntu/workspace/jenkinsangularjob ; scp -r dist/  root@172.31.41.180:/var/www/ "
       }
         
   }
